@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29B3C7E6629446E5AC28C31D /* Pods_YYKit_labelTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A76EA74CB5107B728ADB8B9B /* Pods_YYKit_labelTest.framework */; };
 		A46F254F1F04EF460037BBEA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A46F254E1F04EF460037BBEA /* main.m */; };
 		A46F25521F04EF460037BBEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A46F25511F04EF460037BBEA /* AppDelegate.m */; };
 		A46F25551F04EF460037BBEA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A46F25541F04EF460037BBEA /* ViewController.m */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		091F6C678D5ADF85CF34664C /* Pods-YYKit_labelTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYKit_labelTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YYKit_labelTest/Pods-YYKit_labelTest.debug.xcconfig"; sourceTree = "<group>"; };
+		962CF875898F1F37296C07A0 /* Pods-YYKit_labelTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYKit_labelTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-YYKit_labelTest/Pods-YYKit_labelTest.release.xcconfig"; sourceTree = "<group>"; };
 		A46F254A1F04EF460037BBEA /* YYKit_labelTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YYKit_labelTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A46F254E1F04EF460037BBEA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A46F25501F04EF460037BBEA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 		A46F256E1F04EF460037BBEA /* YYKit_labelTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YYKit_labelTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A46F25721F04EF460037BBEA /* YYKit_labelTestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYKit_labelTestUITests.m; sourceTree = "<group>"; };
 		A46F25741F04EF460037BBEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A76EA74CB5107B728ADB8B9B /* Pods_YYKit_labelTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YYKit_labelTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29B3C7E6629446E5AC28C31D /* Pods_YYKit_labelTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		008173415493FE49502B817C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				091F6C678D5ADF85CF34664C /* Pods-YYKit_labelTest.debug.xcconfig */,
+				962CF875898F1F37296C07A0 /* Pods-YYKit_labelTest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		49CCA45C7357F8FAA5B92A7B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A76EA74CB5107B728ADB8B9B /* Pods_YYKit_labelTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A46F25411F04EF460037BBEA = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +107,8 @@
 				A46F25661F04EF460037BBEA /* YYKit_labelTestTests */,
 				A46F25711F04EF460037BBEA /* YYKit_labelTestUITests */,
 				A46F254B1F04EF460037BBEA /* Products */,
+				008173415493FE49502B817C /* Pods */,
+				49CCA45C7357F8FAA5B92A7B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,9 +171,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A46F25771F04EF460037BBEA /* Build configuration list for PBXNativeTarget "YYKit_labelTest" */;
 			buildPhases = (
+				94A2D3E2D92F8FA493A97F63 /* [CP] Check Pods Manifest.lock */,
 				A46F25461F04EF460037BBEA /* Sources */,
 				A46F25471F04EF460037BBEA /* Frameworks */,
 				A46F25481F04EF460037BBEA /* Resources */,
+				9919005AABFDC94F7986642E /* [CP] Embed Pods Frameworks */,
+				0D86EF6CDF31A74C468C8FA4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -267,6 +294,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D86EF6CDF31A74C468C8FA4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YYKit_labelTest/Pods-YYKit_labelTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94A2D3E2D92F8FA493A97F63 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9919005AABFDC94F7986642E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YYKit_labelTest/Pods-YYKit_labelTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A46F25461F04EF460037BBEA /* Sources */ = {
@@ -422,6 +497,7 @@
 		};
 		A46F25781F04EF460037BBEA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 091F6C678D5ADF85CF34664C /* Pods-YYKit_labelTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YYKit_labelTest/Info.plist;
@@ -433,6 +509,7 @@
 		};
 		A46F25791F04EF460037BBEA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 962CF875898F1F37296C07A0 /* Pods-YYKit_labelTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YYKit_labelTest/Info.plist;
