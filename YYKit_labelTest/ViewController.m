@@ -16,15 +16,12 @@
     NSMutableArray * _datas;
     NSString * _pinChuan;
     NSString *_pinChuan2;
+    NSString *_pinChuan3;
 }
 @end
 
 @implementation ViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
+-(void)test1{
     NSDictionary *dic1 = @{@"type":@"0",@"content":@"您好"};
     NSDictionary *dic2 = @{@"type":@"2",@"content":@"订单加好友@你"};
     NSDictionary *dic3 = @{@"type":@"0",@"content":@"已成功付款，您的订单进入"};
@@ -81,10 +78,77 @@
     [label sizeToFit];
     [self.view addSubview:label];
     
-    //    ================================22222=======================
+ 
+}
+- (void)viewDidLoad {
+    [super viewDidLoad];
+ 
+//    [self test1];
     
-    [self tet2];
+//    [self tet2];
+    
+    [self test3];
+}
+-(void)test3{
+    //假数据
+     NSDictionary *dic1 = @{@"type":@"0",@"content":@"订单"};
+     NSDictionary *dic2 = @{@"type":@"3",@"content":@"测试跳转"};
+     NSDictionary *dic3 = @{@"type":@"0",@"content":@"还未反馈，广告主"};
+     NSDictionary *dic4 = @{@"type":@"8",@"content":@"差一点是帅哥"};
+     NSDictionary *dic5 = @{@"type":@"0",@"content":@"提醒你快去"};
+     NSDictionary *dic6 = @{@"type":@"9",@"content":@"反馈"};
+     NSDictionary *dic7 = @{@"type":@"0",@"content":@"哦！"};
+    NSMutableArray * array = [[NSMutableArray alloc]initWithObjects:dic1,dic2,dic3,dic4,dic5,dic6,dic7,nil];
+    
+    // 拼接字符串
+    NSMutableArray *strArr =[NSMutableArray arrayWithCapacity:0];
+    for (NSDictionary *dicttion in array) {
+        [strArr addObject:dicttion[@"content"]];
+    }
+    _pinChuan3 = [strArr componentsJoinedByString:@""];
+    
+    //设置attributed
+    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:_pinChuan3];
+ 
+    text.font = [UIFont boldSystemFontOfSize:16.0f];
 
+    text.lineSpacing = 5;
+    __weak typeof(self) weakSelf = self;
+    
+    
+    __block NSString * content1;
+    [array enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        NSDictionary * dict = obj;
+       if ([dict[@"type"] integerValue] !=0) {
+              content1 = dict[@"content"];
+            NSLog(@"content---%@",content1);
+           
+//           NSRange range = [_pinChuan3 rangeOfString:content1];
+           NSRange range = [_pinChuan3 rangeOfString:content1 options:NSBackwardsSearch];
+      
+            NSLog(@"range--->%@",NSStringFromRange(range));
+            [text setTextHighlightRange:range color:[UIColor redColor] backgroundColor:[UIColor clearColor] userInfo:nil tapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
+                NSLog(@"点击");
+                [weakSelf didSelectedDic:dict];
+                
+            } longPressAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
+                NSLog(@"长按");
+                
+            }];
+        }
+    }];
+    //  Set to YYLabel or YYTextView.
+    YYLabel *label = [YYLabel new];
+    CGFloat Height  = [self getterSpaceLabelHeight:_pinChuan3 withLineSpacing:5 withFont:[UIFont systemFontOfSize:16.0f] withWidth:KScreenWidth - 40];
+    label.frame = CGRectMake(20, 300,KScreenWidth  - 40, Height);
+    label.attributedText = text;
+    label.numberOfLines = 0;
+    label.font = [UIFont systemFontOfSize:16.0f];
+    label.backgroundColor = [UIColor lightGrayColor];
+    [label sizeToFit];
+    [self.view addSubview:label];
+ 
 }
 -(void)tet2{
     NSDictionary *dic1 = @{@"type":@"0",@"content":@"您好"};
@@ -156,6 +220,8 @@
     
     
 }
+
+
 
 -(void)didSelectedDic:(NSDictionary *)dic{
     NSLog(@"type---%@    content-----%@",dic[@"type"],dic[@"content"]);
